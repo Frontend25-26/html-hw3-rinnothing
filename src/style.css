@@ -3,4 +3,25 @@ body {
     padding: 0;
 
     background: #292929;
+    color: white;
+}
+
+.reveal-button {
+    background-color: yellow;
+}
+
+.reveal-button:checked ~ .quest-card .right {
+    background-color: green;
+}
+
+.reveal-button:checked ~ .quest-card .wrong {
+    background-color: red;
+}
+
+.reveal-button ~ .quest-card .explain {
+    display: none;
+}
+
+.reveal-button:checked ~ .quest-card .explain {
+    display: initial;
 }
