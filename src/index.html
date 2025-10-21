@@ -5,39 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>HW3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="app">
+        <h1>Квиз</h1>
+
         <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button">
-        <label for="reveal-button">Reveal answers</label>
-
-        <fieldset class="quest-card">
-            <legend>Checkbox</legend>
-            
-            <div class="right">
-                <input type="checkbox" id="checkbox-1">
-                <label for="checkbox-1">Checkbox-1</label><br>
-            </div>
-            
-            <div class="wrong">
-                <input type="checkbox" id="checkbox-2">
-                <label for="checkbox-2">Checkbox-2</label><br>
-            </div>
-
-            <div class="wrong">
-                <input type="checkbox" id="checkbox-3">
-                <label for="checkbox-3">Checkbox-3</label><br>
-            </div>
-
-            <p class="explain">Explain</p>
-        </fieldset>
-
-        <fieldset class="quest-card">
-            <legend>Radio</legend>
-            <div><input type="radio" name="radio" value="1"></div>
-            <div><input type="radio" name="radio" value="2"></div>
-            <div><input type="radio" name="radio" value="3"></div>
-        </fieldset>
+        <label for="reveal-button">Reveal answers</label><br>
 
         <fieldset class="quest-card">
             <legend>1</legend>
@@ -45,8 +23,7 @@
             <p class="question">
                 Какие элементы затронет селектор '~'?
             </p>
-            <pre><code class="question">   
-                <!-- 
+            <pre><code class="question"><!-- 
                 html:
                     <p>1</p>
                     <a class="friends" href="https://google.com"></a>
@@ -55,16 +32,14 @@
                     friends ~ * {
                         color: red;
                     }
-                -->
-html:
+-->html:
     &lt;p&gt;1&lt;/p&gt;
     &lt;a class=&quot;friends&quot; href=&quot;https://google.com&quot;&gt;&lt;/a&gt;
     &lt;q&gt;That&#039;s it!&lt;/q&gt;
 css:
     friends ~ * {
         color: red;
-    }
-            </code></pre>
+    }</code></pre>
 
             
             <div class="wrong">
@@ -91,8 +66,7 @@ css:
             <p class="question">
                 Чему равна общая width блока?
             </p>
-            <code>
-                <!-- 
+            <pre><code class="question"><!-- 
                 html:
                     <p class="strange"></p>
                 css:
@@ -103,15 +77,23 @@ css:
                         border: solid 5px;
                         width: 30px;
                     }
-                 -->
-            </code>
+-->html:
+    &lt;p class=&quot;strange&quot;&gt;&lt;/p&gt;
+css:
+    .strange {
+        box-sizing: border-box;
+        margin: 10px;
+        padding: 20px;
+        border: solid 5px;
+        width: 30px;
+    }</code></pre>
 
             <div class="wrong">
                 <input type="radio" id="2-1">
                 <label for="2-1">30</label><br>
             </div>
             
-            <div class="right">
+            <div class="wrong">
                 <input type="radio" id="2-2">
                 <label for="2-2">40</label><br>
             </div>
@@ -121,28 +103,143 @@ css:
                 <label for="2-3">45</label><br>
             </div>
 
-            <div class="wrong">
+            <div class="right">
                 <input type="radio" id="2-3">
                 <label for="2-3">55</label><br>
             </div>
 
-            <p class="explain">При border-box общая width = margin + width</p>
+            <p class="explain">при border-box общая width = margin + width</p>
         </fieldset>
 
         <fieldset class="quest-card">
             <legend>3</legend>
+            <p class="question">Что выведет код?</p>
+            <pre><code class="question">val foo = {
+	a: 5,
+	b: function() {
+		return function() {
+			console.log(this.a)
+		}
+	}
+}
+foo.b()()</code></pre>
+
+            <div class="assess">
+                <input type="text" required placeholder="Введите ответ">
+                <span class="answer">undefined</span>
+            </div>
+
+            <p class="explain">функция, которую возвращет <code>foo.b()</code> не знает своего <code>this</code></p>
         </fieldset>
+
         <fieldset class="quest-card">
             <legend>4</legend>
+            <p class="question">Отличия между margin и padding:</p>
+
+            <div class="right">
+                <input type="checkbox" id="4-1">
+                <label for="4-1">margin всегда учавствует в подсчёте общей ширины</label><br>
+            </div>
+            
+            <div class="wrong">
+                <input type="checkbox" id="4-2">
+                <label for="4-2">padding - отступ снаружи блока</label><br>
+            </div>
+            
+            <div class="wrong">
+                <input type="checkbox" id="4-3">
+                <label for="4-3">padding одного блока может сколлапсировать с padding другого блока</label><br>
+            </div>
+
+            <p class="explain">margin - снаружи, padding - внутри</p>
         </fieldset>
+
         <fieldset class="quest-card">
             <legend>5</legend>
+            <p class="question"><code>visibility:hidden</code> и <code>display:none</code></p>
+
+            
+            <div class="right">
+                <input type="checkbox" id="5-1">
+                <label for="5-1"><code>visibility:hidden</code> скрывает элемент</label><br>
+            </div>
+            
+            <div class="wrong">
+                <input type="checkbox" id="5-2">
+                <label for="5-2"><code>display:none</code> резервирует место под элемент</label><br>
+            </div>
+            
+            <div class="right">
+                <input type="checkbox" id="5-3">
+                <label for="5-3"><code>visiblity:hidden</code> скрывает элемент от скринридеров</label><br>
+            </div>
+
+            <p class="explain"><code>visibility:hidden</code> просто делает элемент невидимым, а <code>display:none</code> - даже не рендерит, оба не могут быть прочитаны скринридерами</p>
         </fieldset>
+
         <fieldset class="quest-card">
             <legend>6</legend>
+            <p class="question">Что выведет код?</p>
+            <pre><code class="question">val m = new Map([[7, 5], [" 7", 10]])
+console.log(m[" 7"])</code></pre>
+
+            <div class="wrong">
+                <input type="checkbox" id="6-1">
+                <label for="6-1">5</label><br>
+            </div>
+            
+            <div class="wrong">
+                <input type="checkbox" id="6-2">
+                <label for="6-2">10</label><br>
+            </div>
+            
+            <div class="right">
+                <input type="checkbox" id="6-3">
+                <label for="6-3">undefined</label><br>
+            </div>
+
+            <p class="explain">получить объект из мапы - только через <code>m.get</code></p>
         </fieldset>
+
         <fieldset class="quest-card">
             <legend>7</legend>
+            <p class="question">Какого цвета будет p?</p>
+            <pre><code class="question"><!-- html:
+    <p class="text primary secondary">
+css:
+    p.secondary { color: yellow; }
+    p { color: blue; }
+    p.primary { color: red; }
+    .text { color: green; } 
+-->html:
+    &lt;p class=&quot;text primary secondary&quot;&gt;
+css:
+    p.secondary { color: yellow; }
+    p { color: blue; }
+    p.primary { color: red; }
+    .text { color: green; }</code></pre>
+
+            <div class="wrong">
+                <input type="radio" id="7-1">
+                <label for="7-1">yellow</label><br>
+            </div>
+            
+            <div class="wrong">
+                <input type="radio" id="7-2">
+                <label for="7-2">blue</label><br>
+            </div>
+            
+            <div class="right">
+                <input type="radio" id="7-3">
+                <label for="7-3">red</label><br>
+            </div>
+
+            <div class="wrong">
+                <input type="radio" id="7-4">
+                <label for="7-4">red</label><br>
+            </div>
+
+            <p class="explain">Специфичности - (0,1,1), (0,0,1), (0,1,1), (0,1,0)</p>
         </fieldset>
     </div>
 </body>
