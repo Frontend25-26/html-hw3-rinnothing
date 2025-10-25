@@ -42,19 +42,19 @@ css:
     }</code></pre>
 
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="1-1">
-                <label for="1-1">p</label><br>
+                <label for="1-1" data-correct="false">p</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="1-2">
-                <label for="1-2">a</label><br>
+                <label for="1-2" data-correct="false">a</label><br>
             </div>
             
-            <div class="right">
+            <div>
                 <input type="checkbox" id="1-3">
-                <label for="1-3">q</label><br>
+                <label for="1-3" data-correct="true">q</label><br>
             </div>
             
             <p class="explain">`~` затрагивает только элементы того же уровня, находящиеся ниже выбранного первым условием элемента</p>
@@ -89,24 +89,24 @@ css:
         width: 30px;
     }</code></pre>
 
-            <div class="right">
+            <div>
                 <input type="radio" name="2" id="2-1" required>
-                <label for="2-1">30</label><br>
+                <label for="2-1" data-correct="true">30</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="radio" name="2" id="2-2">
-                <label for="2-2">40</label><br>
+                <label for="2-2" data-correct="false">40</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="radio" name="2" id="2-3">
-                <label for="2-3">45</label><br>
+                <label for="2-3" data-correct="false">45</label><br>
             </div>
 
-            <div class="wrong">
+            <div>
                 <input type="radio" name="2" id="2-4">
-                <label for="2-4">55</label><br>
+                <label for="2-4" data-correct="false">55</label><br>
             </div>
 
             <p class="explain">при border-box padding и border "уже учтены" в width</p>
@@ -144,19 +144,19 @@ foo.b()()</code></pre>
             <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-4">
             <label for="reveal-button-4">Показать ответ</label><br>
 
-            <div class="right">
+            <div>
                 <input type="checkbox" id="4-1">
-                <label for="4-1">margin всегда учавствует в подсчёте общей ширины</label><br>
+                <label for="4-1" data-correct="true">margin всегда учавствует в подсчёте общей ширины</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="4-2">
-                <label for="4-2">padding - отступ снаружи блока</label><br>
+                <label for="4-2" data-correct="false">padding - отступ снаружи блока</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="4-3">
-                <label for="4-3">padding одного блока может сколлапсировать с padding другого блока</label><br>
+                <label for="4-3" data-correct="false">padding одного блока может сколлапсировать с padding другого блока</label><br>
             </div>
 
             <p class="explain">margin - снаружи, padding - внутри</p>
@@ -169,19 +169,19 @@ foo.b()()</code></pre>
             <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-5">
             <label for="reveal-button-5">Показать ответ</label><br>
             
-            <div class="right">
+            <div>
                 <input type="checkbox" id="5-1">
-                <label for="5-1"><code>visibility:hidden</code> скрывает элемент</label><br>
+                <label for="5-1" data-correct="true"><code>visibility:hidden</code> скрывает элемент</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="5-2">
-                <label for="5-2"><code>display:none</code> резервирует место под элемент</label><br>
+                <label for="5-2" data-correct="false"><code>display:none</code> резервирует место под элемент</label><br>
             </div>
             
-            <div class="right">
+            <div>
                 <input type="checkbox" id="5-3">
-                <label for="5-3"><code>visiblity:hidden</code> скрывает элемент от скринридеров</label><br>
+                <label for="5-3" data-correct="true"><code>visiblity:hidden</code> скрывает элемент от скринридеров</label><br>
             </div>
 
             <p class="explain"><code>visibility:hidden</code> просто делает элемент невидимым, а <code>display:none</code> - даже не рендерит, оба не могут быть прочитаны скринридерами</p>
@@ -196,19 +196,19 @@ foo.b()()</code></pre>
             <pre><code class="question">val m = new Map([[7, 5], [" 7", 10]])
 console.log(m[" 7"])</code></pre>
 
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="6-1">
-                <label for="6-1">5</label><br>
+                <label for="6-1" data-correct="false">5</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="checkbox" id="6-2">
-                <label for="6-2">10</label><br>
+                <label for="6-2" data-correct="false">10</label><br>
             </div>
             
-            <div class="right">
+            <div>
                 <input type="checkbox" id="6-3">
-                <label for="6-3">undefined</label><br>
+                <label for="6-3" data-correct="true">undefined</label><br>
             </div>
 
             <p class="explain">получить объект из мапы - только через <code>m.get</code></p>
@@ -235,24 +235,24 @@ css:
     p.primary { color: red; }
     .text { color: green; }</code></pre>
 
-            <div class="wrong">
+            <div>
                 <input type="radio" name="7" id="7-1" required>
-                <label for="7-1">yellow</label><br>
+                <label for="7-1" data-correct="false">yellow</label><br>
             </div>
             
-            <div class="wrong">
+            <div>
                 <input type="radio" name="7" id="7-2">
-                <label for="7-2">blue</label><br>
+                <label for="7-2" data-correct="false">blue</label><br>
             </div>
             
-            <div class="right">
+            <div>
                 <input type="radio" name="7" id="7-3">
-                <label for="7-3">red</label><br>
+                <label for="7-3" data-correct="true">red</label><br>
             </div>
 
-            <div class="wrong">
+            <div>
                 <input type="radio" name="7" id="7-4">
-                <label for="7-4">green</label><br>
+                <label for="7-4" data-correct="false">green</label><br>
             </div>
 
             <p class="explain">Специфичности - (0,1,1), (0,0,1), (0,1,1), (0,1,0)</p>
