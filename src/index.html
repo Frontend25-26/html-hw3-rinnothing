@@ -29,7 +29,7 @@
                     <a class="friends" href="https://google.com"></a>
                     <q>That's it!</q>
                 css:
-                    friends ~ * {
+                    .friends ~ * {
                         color: red;
                     }
 -->html:
@@ -37,7 +37,7 @@
     &lt;a class=&quot;friends&quot; href=&quot;https://google.com&quot;&gt;&lt;/a&gt;
     &lt;q&gt;That&#039;s it!&lt;/q&gt;
 css:
-    friends ~ * {
+    .friends ~ * {
         color: red;
     }</code></pre>
 
@@ -64,7 +64,7 @@ css:
             <legend>2</legend>
 
             <p class="question">
-                Чему равна общая width блока?
+                Какую width покажет inspect element в браузере?
             </p>
             <pre><code class="question"><!-- 
                 html:
@@ -73,7 +73,6 @@ css:
                     .strange {
                         box-sizing: border-box;
                         margin: 10px;
-                        padding: 20px;
                         border: solid 5px;
                         width: 30px;
                     }
@@ -83,13 +82,12 @@ css:
     .strange {
         box-sizing: border-box;
         margin: 10px;
-        padding: 20px;
         border: solid 5px;
         width: 30px;
     }</code></pre>
 
-            <div class="wrong">
-                <input type="radio" name="2" id="2-1">
+            <div class="right">
+                <input type="radio" name="2" id="2-1" required>
                 <label for="2-1">30</label><br>
             </div>
             
@@ -103,12 +101,12 @@ css:
                 <label for="2-3">45</label><br>
             </div>
 
-            <div class="right">
-                <input type="radio" name="2" id="2-3">
-                <label for="2-3">55</label><br>
+            <div class="wrong">
+                <input type="radio" name="2" id="2-4">
+                <label for="2-4">55</label><br>
             </div>
 
-            <p class="explain">при border-box общая width = margin + width</p>
+            <p class="explain">при border-box padding и border "уже учтены" в width</p>
         </fieldset>
 
         <fieldset class="quest-card">
@@ -220,7 +218,7 @@ css:
     .text { color: green; }</code></pre>
 
             <div class="wrong">
-                <input type="radio" name="7" id="7-1">
+                <input type="radio" name="7" id="7-1" required>
                 <label for="7-1">yellow</label><br>
             </div>
             
@@ -236,7 +234,7 @@ css:
 
             <div class="wrong">
                 <input type="radio" name="7" id="7-4">
-                <label for="7-4">red</label><br>
+                <label for="7-4">green</label><br>
             </div>
 
             <p class="explain">Специфичности - (0,1,1), (0,0,1), (0,1,1), (0,1,0)</p>
