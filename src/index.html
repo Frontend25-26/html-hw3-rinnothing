@@ -13,16 +13,16 @@
 <body>
     <div id="app" class="app">
         <h1>Квиз</h1>
-
-        <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button">
-        <label for="reveal-button">Показать ответы</label><br>
-
+        
         <fieldset class="quest-card">
             <legend>1</legend>
 
             <p class="question">
                 Какие элементы затронет селектор '~'?
             </p>
+            
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-1">
+            <label for="reveal-button-1">Показать ответ</label><br>
             <pre><code class="question"><!-- 
                 html:
                     <p>1</p>
@@ -66,6 +66,9 @@ css:
             <p class="question">
                 Какую width покажет inspect element в браузере?
             </p>
+            
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-2">
+            <label for="reveal-button-2">Показать ответ</label><br>
             <pre><code class="question"><!-- 
                 html:
                     <p class="strange"></p>
@@ -112,6 +115,10 @@ css:
         <fieldset class="quest-card">
             <legend>3</legend>
             <p class="question">Что выведет код?</p>
+
+            
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-3">
+            <label for="reveal-button-3">Показать ответ</label><br>
             <pre><code class="question">val foo = {
 	a: 5,
 	b: function() {
@@ -133,6 +140,9 @@ foo.b()()</code></pre>
         <fieldset class="quest-card">
             <legend>4</legend>
             <p class="question">Отличия между margin и padding:</p>
+
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-4">
+            <label for="reveal-button-4">Показать ответ</label><br>
 
             <div class="right">
                 <input type="checkbox" id="4-1">
@@ -156,6 +166,8 @@ foo.b()()</code></pre>
             <legend>5</legend>
             <p class="question"><code>visibility:hidden</code> и <code>display:none</code></p>
 
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-5">
+            <label for="reveal-button-5">Показать ответ</label><br>
             
             <div class="right">
                 <input type="checkbox" id="5-1">
@@ -178,6 +190,9 @@ foo.b()()</code></pre>
         <fieldset class="quest-card">
             <legend>6</legend>
             <p class="question">Что выведет код?</p>
+
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-6">
+            <label for="reveal-button-6">Показать ответ</label><br>
             <pre><code class="question">val m = new Map([[7, 5], [" 7", 10]])
 console.log(m[" 7"])</code></pre>
 
@@ -202,6 +217,9 @@ console.log(m[" 7"])</code></pre>
         <fieldset class="quest-card">
             <legend>7</legend>
             <p class="question">Какого цвета будет p?</p>
+
+            <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-7">
+            <label for="reveal-button-7">Показать ответ</label><br>
             <pre><code class="question"><!-- html:
     <p class="text primary secondary">
 css:
