@@ -5,10 +5,247 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>HW3</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        
+    <div id="app" class="app">
+        <form autocomplete="off">
+            <h1>Квиз</h1>
+            
+            <fieldset class="quest-card">
+                <legend>Какие элементы затронет селектор '~'?</legend>
+                
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-1">
+                <label for="reveal-button-1">Показать ответ</label><br>
+                <pre><code><!-- 
+                    html:
+                        <p>1</p>
+                        <a class="friends" href="https://google.com"></a>
+                        <q>That's it!</q>
+                    css:
+                        .friends ~ * {
+                            color: red;
+                        }
+    -->html:
+        &lt;p&gt;1&lt;/p&gt;
+        &lt;a class=&quot;friends&quot; href=&quot;https://google.com&quot;&gt;&lt;/a&gt;
+        &lt;q&gt;That&#039;s it!&lt;/q&gt;
+    css:
+        .friends ~ * {
+            color: red;
+        }</code></pre>
+
+                
+                <div>
+                    <input type="checkbox" id="1-1">
+                    <label for="1-1" data-correct="false">p</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="1-2">
+                    <label for="1-2" data-correct="false">a</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="1-3">
+                    <label for="1-3" data-correct="true">q</label><br>
+                </div>
+                
+                <p class="explain">`~` затрагивает только элементы того же уровня, находящиеся ниже выбранного первым условием элемента</p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend>Какую width покажет inspect element в браузере?</legend>
+                
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-2">
+                <label for="reveal-button-2">Показать ответ</label><br>
+                <pre><code><!-- 
+                    html:
+                        <p class="strange"></p>
+                    css:
+                        .strange {
+                            box-sizing: border-box;
+                            margin: 10px;
+                            border: solid 5px;
+                            width: 30px;
+                        }
+    -->html:
+        &lt;p class=&quot;strange&quot;&gt;&lt;/p&gt;
+    css:
+        .strange {
+            box-sizing: border-box;
+            margin: 10px;
+            border: solid 5px;
+            width: 30px;
+        }</code></pre>
+
+                <div>
+                    <input type="radio" name="2" id="2-1" required>
+                    <label for="2-1" data-correct="true">30</label><br>
+                </div>
+                
+                <div>
+                    <input type="radio" name="2" id="2-2">
+                    <label for="2-2" data-correct="false">40</label><br>
+                </div>
+                
+                <div>
+                    <input type="radio" name="2" id="2-3">
+                    <label for="2-3" data-correct="false">45</label><br>
+                </div>
+
+                <div>
+                    <input type="radio" name="2" id="2-4">
+                    <label for="2-4" data-correct="false">55</label><br>
+                </div>
+
+                <p class="explain">при border-box padding и border "уже учтены" в width</p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend>Что выведет код?</legend>
+
+                
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-3">
+                <label for="reveal-button-3">Показать ответ</label><br>
+                <pre><code>val foo = {
+        a: 5,
+        b: function() {
+            return function() {
+                console.log(this.a)
+            }
+        }
+    }
+    foo.b()()</code></pre>
+
+                <div class="assess">
+                    <input type="text" required placeholder="Введите ответ">
+                    <span class="answer">undefined</span>
+                </div>
+
+                <p class="explain">функция, которую возвращет <code>foo.b()</code> не знает своего <code>this</code></p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend>Отличия между margin и padding:</legend>
+
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-4">
+                <label for="reveal-button-4">Показать ответ</label><br>
+
+                <div>
+                    <input type="checkbox" id="4-1">
+                    <label for="4-1" data-correct="true">margin всегда учавствует в подсчёте общей ширины</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="4-2">
+                    <label for="4-2" data-correct="false">padding - отступ снаружи блока</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="4-3">
+                    <label for="4-3" data-correct="false">padding одного блока может сколлапсировать с padding другого блока</label><br>
+                </div>
+
+                <p class="explain">margin - снаружи, padding - внутри</p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend><code>visibility:hidden</code> и <code>display:none</code></legend>
+
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-5">
+                <label for="reveal-button-5">Показать ответ</label><br>
+                
+                <div>
+                    <input type="checkbox" id="5-1">
+                    <label for="5-1" data-correct="true"><code>visibility:hidden</code> скрывает элемент</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="5-2">
+                    <label for="5-2" data-correct="false"><code>display:none</code> резервирует место под элемент</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="5-3">
+                    <label for="5-3" data-correct="true"><code>visiblity:hidden</code> скрывает элемент от скринридеров</label><br>
+                </div>
+
+                <p class="explain"><code>visibility:hidden</code> просто делает элемент невидимым, а <code>display:none</code> - даже не рендерит, оба не могут быть прочитаны скринридерами</p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend>Что выведет код?</legend>
+
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-6">
+                <label for="reveal-button-6">Показать ответ</label><br>
+                <pre><code>val m = new Map([[7, 5], [" 7", 10]])
+    console.log(m[" 7"])</code></pre>
+
+                <div>
+                    <input type="checkbox" id="6-1">
+                    <label for="6-1" data-correct="false">5</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="6-2">
+                    <label for="6-2" data-correct="false">10</label><br>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="6-3">
+                    <label for="6-3" data-correct="true">undefined</label><br>
+                </div>
+
+                <p class="explain">получить объект из мапы - только через <code>m.get</code></p>
+            </fieldset>
+
+            <fieldset class="quest-card">
+                <legend>Какого цвета будет p?</legend>
+
+                <input type="checkbox" name="reveal" value="reveal answers" class="reveal-button" id="reveal-button-7">
+                <label for="reveal-button-7">Показать ответ</label><br>
+                <pre><code><!-- html:
+        <p class="text primary secondary">
+    css:
+        p.secondary { color: yellow; }
+        p { color: blue; }
+        p.primary { color: red; }
+        .text { color: green; } 
+    -->html:
+        &lt;p class=&quot;text primary secondary&quot;&gt;
+    css:
+        p.secondary { color: yellow; }
+        p { color: blue; }
+        p.primary { color: red; }
+        .text { color: green; }</code></pre>
+
+                <div>
+                    <input type="radio" name="7" id="7-1" required>
+                    <label for="7-1" data-correct="false">yellow</label><br>
+                </div>
+                
+                <div>
+                    <input type="radio" name="7" id="7-2">
+                    <label for="7-2" data-correct="false">blue</label><br>
+                </div>
+                
+                <div>
+                    <input type="radio" name="7" id="7-3">
+                    <label for="7-3" data-correct="true">red</label><br>
+                </div>
+
+                <div>
+                    <input type="radio" name="7" id="7-4">
+                    <label for="7-4" data-correct="false">green</label><br>
+                </div>
+
+                <p class="explain">Специфичности - (0,1,1), (0,0,1), (0,1,1), (0,1,0)</p>
+            </fieldset>
+        </form>
     </div>
 </body>
 </html>
